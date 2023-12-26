@@ -104,16 +104,16 @@ def eval_model(args):
             stopping_criteria=[stopping_criteria]
             )
         
-        # print(output_ids)
+        print(output_ids)
 
-        # outputs = tokenizer.decode(output_ids[0, input_ids.shape[1]:]).strip()
+        outputs = tokenizer.decode(output_ids[0, input_ids.shape[1]:]).strip()
         
-        # # conv.messages[-1][-1] = outputs
-        # if outputs.endswith(stop_str):
-        #     outputs = outputs[:-len(stop_str)]
-        # outputs = outputs.strip()
+        # conv.messages[-1][-1] = outputs
+        if outputs.endswith(stop_str):
+            outputs = outputs[:-len(stop_str)]
+        outputs = outputs.strip()
 
-        # print(outputs)
+        print(outputs)
 
 
 
